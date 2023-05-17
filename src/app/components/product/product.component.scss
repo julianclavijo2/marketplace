@@ -1,0 +1,57 @@
+.container-product {
+
+  height: 500.59px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+
+
+
+  .imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 150px !important;
+      height: 300px !important;
+    }
+  }
+
+  .txt {
+
+
+    h2{
+      font-family: RobotoCondensed-Bold;
+      font-size: 20px;
+
+    }
+    small{
+      font-family: RobotoCondensed-Light ;
+    }
+    p{
+      font-family: RobotoCondensed-Regular;
+      font-size: 20px;
+    }
+  }
+
+  .options {
+
+    display: flex;
+    justify-content: end;
+
+    padding: 10px;
+
+    button{
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+
+      img{
+        width: 25px !important;
+        height: 25px !important;
+      }
+    }
+  }
+
+}

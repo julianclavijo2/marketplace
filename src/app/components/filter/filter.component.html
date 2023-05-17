@@ -1,0 +1,16 @@
+
+
+<div class="contain">
+  <select [(ngModel)]="categoryName" (change)="getCategory()">
+    <option value="null" selected>All Categories</option>
+    <option [value]="category" *ngFor="let category of allCategories">{{category}}</option>
+  </select>
+  <input type="text" placeholder="Search By product name" (input)="getText($event)">
+
+  <div class="boton">
+  <img [src]="images.lupa" alt="">
+
+  </div>
+
+</div>
+

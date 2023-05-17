@@ -1,0 +1,52 @@
+
+<div class="my-car">
+  <div class="header">
+    <img [src]="images.bolsa" alt="">
+    <h3>My Shopping cart</h3>
+    <button (click)="excelReport()">
+      <img [src]="images.excel" alt="">
+      </button>
+  </div>
+
+  <div class="items" *ngFor="let item of itemsInCar">
+      <div class="image">
+        <img [src]="item.image" alt="">
+      </div>
+
+        <div class="info">
+          <p style=" line-height: 25px;">{{item.title}}</p>
+          <p>Quantity : {{item.cantidad}}</p>
+          <p>Price : {{item.price}}</p>
+
+        </div>
+
+        <div class="actions">
+          <button (click)="deleteItem(item.id)"> Drop Product </button>
+        </div>
+
+      </div>
+
+
+
+  <table id="excel-table" style="display: none;">
+    <tr>
+      <th>Id</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let item of itemsInCar">
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.cantidad}}</td>
+      <td>{{item.price}}</td>
+
+    </tr>
+  </table>
+  </div>
+
+
+
+
+
+

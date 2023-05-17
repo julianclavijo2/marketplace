@@ -1,0 +1,17 @@
+<div class="container-product">
+  <div class="imagen">
+    <img [src]="product.image" alt="" srcset="">
+  </div>
+  <div class="txt">
+    <h2>{{product.title}}</h2>
+
+    <p>Precio : {{product.price}}</p>
+  </div>
+  <div class="options">
+      <button (click)="sendAction(product.id)">
+        <img [src]="images.eye" alt="" srcset="">
+      </button>
+
+  </div>
+
+</div>

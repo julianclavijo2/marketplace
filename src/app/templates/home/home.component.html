@@ -1,0 +1,54 @@
+<div class="header">
+  <div class="logo">
+    <img [src]="images.logo" alt="" srcset="">
+    <h3>Your Market.com<br>
+      <small>All you need !</small>
+    </h3>
+  </div>
+  <div class="car">
+    <div class="number">
+      <p>{{selectedProductsArray.length}}</p>
+    </div>
+    <img [src]="images.carrito" alt="carrito" srcset="" (click)="redirectToCar()">
+  </div>
+</div>
+
+<div class="banner-section">
+  <h1>Popular</h1>
+  <app-banner class="section-one" [images]="imagesBanner"></app-banner>
+</div>
+
+<div class="filter-section" *ngIf="categories.length > 0">
+  <app-filter [allCategories]="categories" (txtInput)="filterByProduct($event)" (txtSelect)="filterByCategory($event)"></app-filter>
+</div>
+
+<div class="products-section">
+  <h1>Products</h1>
+  <div class="grid">
+    <div *ngFor="let prod of product">
+      <app-product [product]="prod" (eventDetail)="setDetail($event)"></app-product>
+    </div>
+  </div>
+</div>
+
+
+<div class="popUp" *ngIf="showDetail">
+  <div class="content">
+    <div class="close">
+      <img [src]="images.close" alt="" (click)="showDetail = false">
+    </div>
+    <div class="imagen">
+      <img [src]="detail.image" alt="close">
+    </div>
+    <div class="txt">
+      <h2>{{detail.title}}</h2>
+      <small>{{detail.description}}</small>
+      <p>Precio : {{detail.price}} </p>
+    </div>
+    <div class="options">
+      <button (click)="addCar(detail)">
+        <img [src]="images.add" alt="">
+      </button>
+    </div>
+  </div>
+</div>
